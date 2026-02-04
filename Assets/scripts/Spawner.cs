@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Enemy _enemy;
-    [SerializeField] private Timer _timer;
+    
     private Vector3 GetDirection()
     {
         float directionX = Random.Range(-1f, 1f);
