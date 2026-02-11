@@ -5,7 +5,9 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Enemy _enemy;
-    
+    [SerializeField] private Timer _timer;
+    [SerializeField] private Target _target;
+
     private Vector3 GetDirection()
     {
         float directionX = Random.Range(-1f, 1f);
@@ -16,6 +18,6 @@ public class Spawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        Instantiate(_enemy, transform.position, Quaternion.identity).SetDirection(GetDirection());
+        Instantiate(_enemy, transform.position, Quaternion.identity).SetTarget(_target);
     }
 }

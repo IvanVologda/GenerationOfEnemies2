@@ -358,6 +358,8 @@
 "Assets/scripts/Enemy.cs"
 "Assets/scripts/Spawner.cs"
 "Assets/scripts/SpawnSelector.cs"
+"Assets/scripts/Target.cs"
+"Assets/scripts/target.cs"
 "Assets/scripts/Timer.cs"
 -langversion:9.0
 
