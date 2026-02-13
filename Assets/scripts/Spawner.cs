@@ -1,23 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Enemy _enemy;
-    [SerializeField] private Timer _timer;
-    [SerializeField] private Target _target;
+    [SerializeField] private Transform _point;
+    [SerializeField] private float _spawnDelay;
 
-    private Vector3 GetDirection()
+    private void Start()
     {
-        float directionX = Random.Range(-1f, 1f);
-        float directionZ = Random.Range(-1f, 1f);
+        StartCoroutine(CountTime());
+    }
 
-        return new Vector3(directionX, 0, directionZ).normalized;
+    private IEnumerator CountTime()
+    {
+        var wait = new WaitForSeconds(_spawnDelay);
+
+        while (true)
+        {
+            yield return wait;
+            SpawnEnemy();
+        }
     }
 
     public void SpawnEnemy()
     {
-        Instantiate(_enemy, transform.position, Quaternion.identity).SetTarget(_target);
+        Instantiate(_enemy, transform.position, Quaternion.identity).SetPoint(_point);
     }
 }

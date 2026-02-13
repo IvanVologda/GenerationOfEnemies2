@@ -357,10 +357,6 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/scripts/Enemy.cs"
 "Assets/scripts/Spawner.cs"
-"Assets/scripts/SpawnSelector.cs"
-"Assets/scripts/Target.cs"
-"Assets/scripts/target.cs"
-"Assets/scripts/Timer.cs"
 -langversion:9.0
 
 /deterministic

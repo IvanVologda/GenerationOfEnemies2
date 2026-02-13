@@ -6,17 +6,17 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 5f;
-    private Target _target;
+    private Transform _point;
     private Vector3 _direction;
 
     private void Update()
     {
-        _direction = (_target.transform.position - transform.position).normalized;
+        _direction = (_point.position - transform.position).normalized;
         transform.Translate(_direction * _moveSpeed * Time.deltaTime);
     }
 
-    public void SetTarget(Target target)
+    public void SetPoint(Transform point)
     {
-        _target = target;
+        _point = point;
     }
 }
